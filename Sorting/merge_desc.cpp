@@ -1,3 +1,7 @@
+// Merge Sort - Descending Order using Divide and Conquer
+// Time Complexity: O(n log n)
+// Space Complexity: O(n)
+
 #include <iostream>
 #include <vector>
 
