@@ -6,7 +6,7 @@ This repository contains various **DSA problems in C++**, organized by topics. C
 
 ## Array
 
-- [Find Largest Element](Array/largest.cpp)
+- [Find Largest Element](Array/largest_element.cpp)
 - [Find Second Largest Element](Array/second_largest.cpp)
 - [Find Smallest Element](Array/smallest.cpp)
 - [Find Second Smallest Element](Array/second_smallest.cpp)
