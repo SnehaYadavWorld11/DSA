@@ -86,3 +86,59 @@ int main() {
 Time Complexity: O(n) - one pass to count + one pass to check
 Space Complexity: O(n) - hashmap stores element counts
 */
+
+
+
+/***********************************************************************************************************************************/
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Function to find the majority element using Moore's Voting Algorithm
+void majorityElement(vector<int>& nums) {
+    // Phase 1: Find a candidate for majority element
+    int count = 0;
+    int ele = 0;
+
+    for(int i = 0; i < nums.size(); i++) {
+        if(count == 0) {
+            ele = nums[i];
+            count = 1;
+        } else if(ele == nums[i]) {
+            count++;
+        } else {
+            count--;
+        }
+    }
+
+    // Phase 2: Verify if the candidate is actually the majority
+    int cnt = 0;
+    for(int i = 0; i < nums.size(); i++) {
+        if(nums[i] == ele) {
+            cnt++;
+            if(cnt > nums.size() / 2) {
+                cout << "Majority Element: " << ele << endl;
+                return;
+            }
+        }
+    }
+
+    cout << "Not Found! : " << -1 << endl;
+}
+
+int main() {
+    vector<int> nums1 = {1, 1, 2, 1, 3, 5, 1};
+    vector<int> nums2 = {2, 13};
+    vector<int> nums3 = {7};
+
+    majorityElement(nums1);
+    majorityElement(nums2);
+    majorityElement(nums3);
+
+    return 0;
+}
+
+/*
+Time Complexity: O(n) - two passes over the array
+Space Complexity: O(1) - no extra space used
+*/
